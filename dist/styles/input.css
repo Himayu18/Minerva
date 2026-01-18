@@ -1,0 +1,102 @@
+
+
+
+.main-container{
+    @apply flex flex-col items-center h-screen ;
+}
+
+/* ---------------------------------------------------title section ------------------------------------------------------------*/
+.title-section{
+    @apply flex justify-center
+    md:mt-5;
+}
+.title-figure{
+    @apply flex gap-3;
+}
+.title-logo{
+    @apply md:h-16 md:w-16;
+}
+.title{
+    @apply  text-4xl md:text-6xl;
+}
+
+/* -----------------------------------------------------button section --------------------------------------------------------*/ 
+.button-section{
+    @apply flex justify-center mt-10
+    md:mt-12;
+}
+
+.button-figure-1,
+.button-figure-2
+{
+    @apply flex justify-center items-center  text-center bg-gray-500 h-10 w-28
+    md:w-40 md:h-12 md:gap-2;
+
+    border: 2px solid black;
+    border-radius:20px;
+}
+
+.button-link-1,
+.button-link-2
+{
+    @apply flex items-center justify-center no-underline text-[14px] text-white w-16 h-7
+    md:h-11 md:w-20 md:text-[20px];
+}
+
+.button-icon-1,
+.button-icon-2
+{
+    @apply md:h-7 md:w-7
+}
+
+/* --------------------------------------------------------Video section-------------------------------------------------------- */
+.video-section{
+    @apply flex justify-center mt-9 h-44 w-72 flex-shrink-0
+    md:w-[1000px] md:mt-10 md:h-[400px];
+    border: 2px solid black;
+    border-radius: 20px;
+}
+.video-div{
+    @apply flex justify-center
+}
+.video-figure{
+    @apply flex justify-center items-center
+}
+.video-icon{}
+
+/* --------------------------------------------------------Image Generation section-------------------------------------------- */
+
+.image-generation-section{
+    @apply flex gap-5 p-5 items-center mt-5 h-[300px] w-[300px] flex-shrink-0
+    md:w-[700px] md:h-[400px] md:mt-10 md:gap-10;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+.image-generation-img-div{
+    @apply flex h-[250px] w-[130px]
+    md:h-[350px] md:w-[230px];
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+.image-generation-div{
+    @apply flex flex-col gap-3;
+}
+
+.image-generation-header{
+    @apply flex gap-2
+    md:text-3xl md:mb-4;
+}
+.img-icon{
+    @apply md:h-[30px] md:w-[30px]
+}
+
+.image-generation-content{
+    @apply h-[200px] w-[140px]
+    md:h-[300px] md:w-[400px];
+    
+    border: 2px solid black;
+    border-radius: 20px;
+    
+}
