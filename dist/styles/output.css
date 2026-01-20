@@ -1,3 +1,5 @@
+/* *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**HOME PAGE STYLES **-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- */
+
 .main-container
 {
   display: flex;
@@ -172,9 +174,6 @@
   justify-content: center;
 }
 
-.video-icon{
-}
-
 /* --------------------------------------------------------Image Generation section-------------------------------------------- */
 
 .image-generation-section
@@ -273,4 +272,74 @@
 .image-generation-content{
   border: 2px solid black;
   border-radius: 20px;
+}
+
+/* *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**CHAT PAGE STYLES **-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- */
+
+.main-header
+{
+  display: flex;
+  height: 3rem;
+  width: 100%;
+  align-items: center;
+  gap: 1.25rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+#model-selector
+{
+  height: 1.5rem;
+  width: auto;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity, 1));
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.theme-toggle-div
+{
+  margin-left: auto;
+}
+
+/* ------------------------------------------------------side bar---------------------------------------------------------------- */
+
+.side-bar
+{
+  width: 13rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 252 232 / var(--tw-bg-opacity, 1));
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.logo
+{
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.ai-tools-nav
+{
+  margin-left: 0.25rem;
+  display: flex;
+  width: 12rem;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.ai-tools-list
+{
+  list-style-type: none;
 }

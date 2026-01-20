@@ -62,7 +62,6 @@
 .video-figure{
     @apply flex justify-center items-center
 }
-.video-icon{}
 
 /* --------------------------------------------------------Image Generation section-------------------------------------------- */
 
@@ -103,3 +102,35 @@
 
 
 /* *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**CHAT PAGE STYLES **-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- */
+.main-header{
+    @apply h-12 w-full flex px-1 gap-5 items-center;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+#model-selector{
+    @apply bg-gray-500  appearance-none h-6 w-auto px-2;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+.theme-toggle-div{
+    @apply ml-auto ;
+}
+
+/* ------------------------------------------------------side bar---------------------------------------------------------------- */
+.side-bar{
+    @apply bg-yellow-50 w-52 ;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.logo{
+    @apply ml-2 mt-2 h-6 w-6 ;
+}
+.ai-tools-nav{
+    @apply flex flex-col justify-start w-48 ml-1;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+.ai-tools-list{
+    @apply list-none;
+}
