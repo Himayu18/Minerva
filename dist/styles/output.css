@@ -309,11 +309,20 @@
   margin-left: auto;
 }
 
+.layout-div
+{
+  display: flex;
+  height: 100vh;
+}
+
 /* ------------------------------------------------------side bar---------------------------------------------------------------- */
 
 .side-bar
 {
+  display: flex;
+  height: 100%;
   width: 13rem;
+  flex-direction: column;
   --tw-bg-opacity: 1;
   background-color: rgb(254 252 232 / var(--tw-bg-opacity, 1));
   border: 2px solid black;
@@ -323,23 +332,87 @@
 .logo
 {
   margin-left: 0.5rem;
-  margin-top: 0.5rem;
-  height: 1.5rem;
-  width: 1.5rem;
+  margin-top: 1rem;
+  height: 1.75rem;
+  width: 1.75rem;
+}
+
+.ai-tools-header
+{
+  margin: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 .ai-tools-nav
 {
-  margin-left: 0.25rem;
+  margin-top: 1.25rem;
   display: flex;
   width: 12rem;
   flex-direction: column;
   justify-content: flex-start;
-  border: 2px solid black;
-  border-radius: 5px;
 }
 
 .ai-tools-list
 {
+  margin: 0px;
   list-style-type: none;
+  padding: 0px;
+}
+
+.ai-tools
+{
+  margin-top: 0.25rem;
+  margin-left: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration-line: none;
+}
+
+/* --------------------------------------------------------Chat Section------------------------------------------------------------------------ */
+
+.chat-section
+{
+  margin-top: 2rem;
+  height: 20rem;
+  width: 100%;
+}
+
+.chat-header
+{
+  margin: 0px;
+  margin-left: 0.5rem;
+  padding: 0px;
+  line-height: 1.25;
+}
+
+.chat-list-cont
+{
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+}
+
+.chat-list
+{
+  list-style-type: none;
+}
+
+/* ---------------------------------------------------------------user-accounts section-------------------------------------------------------------------- */
+
+.user-footer
+{
+  margin-left: 0.5rem;
+  margin-top: auto;
+  padding: 0.5rem;
+}
+
+.user-span
+{
+  display: flex;
+  gap: 1rem;
+  font-size: 20px;
 }
