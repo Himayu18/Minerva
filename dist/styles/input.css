@@ -1,6 +1,8 @@
 
 /* *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**HOME PAGE STYLES **-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- */
-
+body{
+    @apply m-0 ;
+}
 .main-container{
     @apply flex flex-col items-center h-screen ;
 }
@@ -103,27 +105,29 @@
 
 /* *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**CHAT PAGE STYLES **-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- */
 .main-header{
-    @apply h-12 w-full flex px-1 gap-5 items-center;
+    @apply h-12 w-full flex items-center;
     border: 2px solid black;
-    border-radius: 20px;
 }
 #model-selector{
-    @apply bg-gray-500  appearance-none h-6 w-auto px-2;
+    @apply bg-gray-500  appearance-none h-6 w-auto px-2 m-2;
     border: 2px solid black;
     border-radius: 5px;
 }
 .theme-toggle-div{
-    @apply ml-auto ;
+    @apply ml-auto mr-2 ;
 }
 
+
+/* ------------------------------------------------------side bar---------------------------------------------------------------- */
 .layout-div{
     @apply flex h-screen;
+
 }
-/* ------------------------------------------------------side bar---------------------------------------------------------------- */
 .side-bar{
     @apply flex flex-col bg-yellow-50 h-full w-52 ;
     border: 2px solid black;
     border-radius: 10px;
+    display: none;
 }
 
 .logo{
@@ -161,4 +165,35 @@
 }
 .user-span{
     @apply flex gap-4 text-[20px];
+}
+
+/* ------------------------------------------------------------------chat main container---------------------------------------------------------------------- */
+.chat-main-container{
+    @apply flex flex-col w-full mx-auto px-4 pb-6;
+}
+.chat-container {
+    @apply flex-1 ml-7;
+}
+
+.chat-welcome-message{
+    @apply ml-7 mt-28;
+}
+.user-prompt-container{
+    @apply  w-[320px] h-1 mt-auto mb-12 mx-auto flex items-center gap-2 py-6;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+.user-voice-input{
+    @apply h-6 w-6;
+}
+.user-media-input{
+    @apply h-6 w-6;
+}
+.user-input{
+    @apply border-none ml-1 appearance-none focus:outline-none;
+}
+.ai-response{
+    @apply h-10 w-16;
+    border: 2px solid black;
+    border-radius: 25px;
 }

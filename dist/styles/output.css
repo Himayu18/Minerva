@@ -1,5 +1,10 @@
 /* *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**HOME PAGE STYLES **-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- */
 
+body
+{
+  margin: 0px;
+}
+
 .main-container
 {
   display: flex;
@@ -282,15 +287,12 @@
   height: 3rem;
   width: 100%;
   align-items: center;
-  gap: 1.25rem;
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
   border: 2px solid black;
-  border-radius: 20px;
 }
 
 #model-selector
 {
+  margin: 0.5rem;
   height: 1.5rem;
   width: auto;
   -webkit-appearance: none;
@@ -307,15 +309,16 @@
 .theme-toggle-div
 {
   margin-left: auto;
+  margin-right: 0.5rem;
 }
+
+/* ------------------------------------------------------side bar---------------------------------------------------------------- */
 
 .layout-div
 {
   display: flex;
   height: 100vh;
 }
-
-/* ------------------------------------------------------side bar---------------------------------------------------------------- */
 
 .side-bar
 {
@@ -327,6 +330,7 @@
   background-color: rgb(254 252 232 / var(--tw-bg-opacity, 1));
   border: 2px solid black;
   border-radius: 10px;
+  display: none;
 }
 
 .logo
@@ -415,4 +419,82 @@
   display: flex;
   gap: 1rem;
   font-size: 20px;
+}
+
+/* ------------------------------------------------------------------chat main container---------------------------------------------------------------------- */
+
+.chat-main-container
+{
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1.5rem;
+}
+
+.chat-container
+{
+  margin-left: 1.75rem;
+  flex: 1 1 0%;
+}
+
+.chat-welcome-message
+{
+  margin-left: 1.75rem;
+  margin-top: 7rem;
+}
+
+.user-prompt-container
+{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: 3rem;
+  display: flex;
+  height: 0.25rem;
+  width: 320px;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+.user-voice-input
+{
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.user-media-input
+{
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.user-input
+{
+  margin-left: 0.25rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-style: none;
+}
+
+.user-input:focus
+{
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.ai-response
+{
+  height: 2.5rem;
+  width: 4rem;
+  border: 2px solid black;
+  border-radius: 25px;
 }
