@@ -105,11 +105,15 @@ body{
 
 /* *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**CHAT PAGE STYLES **-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- */
 .main-header{
-    @apply h-12 w-full flex items-center;
+    @apply h-12 w-full flex items-center gap-2;
     border: 2px solid black;
 }
+.open-side-bar{
+    @apply h-7 w-7 ml-2 bg-gray-300 flex items-center justify-center p-0 ;
+    border-radius: 6px;
+}
 #model-selector{
-    @apply bg-gray-500  appearance-none h-6 w-auto px-2 m-2;
+    @apply bg-gray-500  appearance-none h-7 w-auto px-2 m-2;
     border: 2px solid black;
     border-radius: 5px;
 }
@@ -120,16 +124,28 @@ body{
 
 /* ------------------------------------------------------side bar---------------------------------------------------------------- */
 .layout-div{
-    @apply flex h-screen;
+    @apply flex  h-[calc(100vh-3rem)];
 
 }
 .side-bar{
-    @apply flex flex-col bg-yellow-50 h-full w-52 ;
+    @apply flex flex-col bg-yellow-50 h-full w-52 fixed top-0 left-0;
     border: 2px solid black;
     border-radius: 10px;
-    display: none;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+}
+.side-bar.open {
+    transform: translateX(0);
+
 }
 
+.logo-cont{
+    @apply flex justify-between;
+}
+.close-side-bar{
+    @apply mt-4 mx-4 bg-none;
+}
 .logo{
     @apply ml-2 mt-4 h-7 w-7 ;
 }
@@ -161,7 +177,7 @@ body{
 }
 /* ---------------------------------------------------------------user-accounts section-------------------------------------------------------------------- */
 .user-footer{
-    @apply  ml-2 mt-auto p-2;
+    @apply  ml-2 mt-auto p-2 my-4;
 }
 .user-span{
     @apply flex gap-4 text-[20px];
@@ -179,7 +195,7 @@ body{
     @apply ml-7 mt-28;
 }
 .user-prompt-container{
-    @apply  w-[320px] h-1 mt-auto mb-12 mx-auto flex items-center gap-2 py-6;
+    @apply  w-[320px] mt-auto mb-6 mx-auto flex items-center gap-2;
     border: 2px solid black;
     border-radius: 20px;
 }
@@ -193,7 +209,7 @@ body{
     @apply border-none ml-1 appearance-none focus:outline-none;
 }
 .ai-response{
-    @apply h-10 w-16;
+    @apply h-8 w-14 m-2 mx-4;
     border: 2px solid black;
     border-radius: 25px;
 }

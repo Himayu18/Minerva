@@ -8,6 +8,7 @@
 </head>
 <body class="chat-page-body"">
     <header class="main-header">
+        <button class="open-side-bar" id="sideBar"><img height="20px" width="20px" src="/assets/images/icons/side-bar.png" alt="side-bar"></button>
         <div class="ai-model-selector-div">
             <select  id="model-selector">
                 <option value="">Ai Model</option>
@@ -20,7 +21,10 @@
 
     <div class="layout-div">
         <aside class="side-bar">
-            <img class="logo" height="20px" width="20px" src="/assets/images/icons/owl.png" alt="logo">
+            <div class="logo-cont"">
+            <img class="logo" height="25px" width="25px" src="/assets/images/icons/owl.png" alt="logo">
+            <img class="close-side-bar" id="close_sideBar" height="20px" width="20px" src="/assets/images/icons/cross.png" alt="side-bar">
+            </div>
             <nav class="ai-tools-nav">
                 <h4 class="ai-tools-header" >AI Tools</h4>
                 <ul class="ai-tools-list">
@@ -44,7 +48,7 @@
 
         <main class="chat-main-container">
             <section class="chat-welcome-message"><h1>Welcome to Minerva</h1></section>
-            <section class="chat-container">chat area</section>
+            <section class="chat-container"></section>
             <div class="user-prompt-container">
                 <img class="user-voice-input" height="20px" width="20px" src="/assets/images/icons/voice.png" alt="voice">
                 <img class="user-media-input" height="20px" width="20px" src="/assets/images/icons/attach.png" alt="attach">
@@ -53,5 +57,8 @@
             </div>
         </main>
     </div>
+    <script src="/src/js/chat.js">
+        
+    </script>
 </body>
 </html>
