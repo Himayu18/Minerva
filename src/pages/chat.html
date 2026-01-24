@@ -6,16 +6,18 @@
     <title>Document</title>
     <link rel="stylesheet" href="/dist/styles/output.css">
 </head>
-<body class="chat-page-body"">
+<body class="chat-page-body">
     <header class="main-header">
-        <button class="open-side-bar" id="sideBar"><img height="20px" width="20px" src="/assets/images/icons/side-bar.png" alt="side-bar"></button>
+        <button class="open-side-bar side-bar-dark sideBar"><img height="20px" width="20px" src="/assets/images/icons/side-bar.png" alt="side-bar"></button>
+        <button class="open-side-bar side-bar-light sideBar"><img height="20px" width="20px" src="/assets/images/icons/light-menus.png" alt="side-bar"></button>
         <div class="ai-model-selector-div">
             <select  id="model-selector">
                 <option value="">Ai Model</option>
             </select>
         </div>
-        <div class="theme-toggle-div">
-            <img height="30px" width="30px" src="/assets/images/icons/theme.png" alt="">
+        <div class="theme-toggle-div" id="themeToggle">
+            <img class="theme-toggle img1" height="30px" width="30px" src="/assets/images/icons/theme.png" alt="">
+            <img class="theme-toggle img2" height="30px" width="30px" src="/assets/images/icons/light-mode.png" alt="">
         </div>
     </header>
 
@@ -23,10 +25,11 @@
         <aside class="side-bar">
             <div class="logo-cont"">
             <img class="logo" height="25px" width="25px" src="/assets/images/icons/owl.png" alt="logo">
-            <img class="close-side-bar" id="close_sideBar" height="20px" width="20px" src="/assets/images/icons/cross.png" alt="side-bar">
+            <img class="close-side-bar close_sideBar light-cross" height="20px" width="20px" src="/assets/images/icons/cross.png" alt="side-bar">
+            <img class="close-side-bar close_sideBar dark-cross" height="20px" width="20px" src="/assets/images/icons/light-cross.png" alt="side-bar">
             </div>
             <nav class="ai-tools-nav">
-                <h4 class="ai-tools-header" >AI Tools</h4>
+                <h5 class="ai-tools-header" >AI Tools</h5>
                 <ul class="ai-tools-list">
                     <li><a class="ai-tools" href=""><img height="20px" width="20px" src="/assets/images/icons/ai-tools.png" alt="">Comming soon...</a></li>
                     <li><a class="ai-tools" href=""><img height="20px" width="20px" src="/assets/images/icons/ai-tools.png" alt="">Comming soon...</a></li>
@@ -40,7 +43,9 @@
                 </ul>
             </section>
             <footer class="user-footer">
-                <span class="user-span"><img height="20px" width="20px" src="/assets/images/icons/user-icon.png" alt="user">Username</span>
+                <span class="user-span"><img class="light-user-icon" height="20px" width="20px" src="/assets/images/icons/user-icon.png" alt="user">
+                    <img class="dark-user-icon"  height="20px" width="20px" src="/assets/images/icons/dark-user-icon.png" alt="user">
+                    Username</span>
             </footer>
         </aside>
 
@@ -48,10 +53,12 @@
             <section class="chat-welcome-message"><h1>Welcome to Minerva</h1></section>
             <section class="chat-container"></section>
             <div class="user-prompt-container">
-                <img class="user-voice-input" height="20px" width="20px" src="/assets/images/icons/voice.png" alt="voice">
-                <img class="user-media-input" height="20px" width="20px" src="/assets/images/icons/attach.png" alt="attach">
+                <img class="user-voice-input light-voice-icon" height="20px" width="20px" src="/assets/images/icons/voice.png" alt="voice">
+                <img class="user-voice-input dark-voice-icon" height="20px" width="20px" src="/assets/images/icons/light-voice.png" alt="voice">
+                <img class="user-media-input light-attach-icon" height="20px" width="20px" src="/assets/images/icons/attach.png" alt="attach">
+                <img class="user-media-input dark-attach-icon" height="20px" width="20px" src="/assets/images/icons/light-attach.png" alt="attach">
                 <input class="user-input" id="user-input-prompt" type="text" placeholder="Ask anything..."> 
-                <button class="ai-response" ><img height="20px" width="20px" src="/assets/images/icons/uparrow.png" alt="send"></button>
+                <button class="ai-response" ><img height="20px" width="20px" src="/assets/images/icons/up-arrow.png" alt="send"></button>
             </div>
         </main>
     </div>

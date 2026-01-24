@@ -1,7 +1,7 @@
 
 /* *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**HOME PAGE STYLES **-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- */
 body{
-    @apply m-0 ;
+    @apply m-0  ;
 }
 .main-container{
     @apply flex flex-col items-center h-screen ;
@@ -104,19 +104,29 @@ body{
 
 
 /* *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**CHAT PAGE STYLES **-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- */
+.chat-page-body{
+    @apply dark:bg-[#041825];
+}
 .main-header{
     @apply h-12 w-full flex items-center gap-2
-    md:h-14 md:gap-3;
-    border: 2px solid black;
+    md:h-14 md:gap-3 dark:border-gray-800;
+    border: 1px solid black;
 }
 .open-side-bar{
-    @apply h-7 w-7 ml-2 bg-gray-300 flex items-center justify-center p-0
-    md:h-9 md:w-9 ;
+    @apply h-7 w-7 ml-2 bg-[#A1E3F9] flex items-center justify-center p-0
+    md:h-9 md:w-9 dark:bg-[#eb513d] dark:border-slate-800;
+    border: 1px solid black;
     border-radius: 6px;
 }
+.side-bar-dark{
+    @apply block dark:hidden;
+}
+.side-bar-light{
+    @apply hidden dark:block;
+}
 #model-selector{
-    @apply bg-gray-500  appearance-none h-7 w-auto px-2 m-2
-    md:h-9 md:w-auto  md:px-2;
+    @apply  appearance-none h-7 w-auto px-2 m-2 bg-[#578FCA]
+    md:h-9 md:w-auto  md:px-2  dark:text-green-50 dark:bg-[#93105f] dark:border-gray-500;
     border: 2px solid black;
     border-radius: 5px;
 }
@@ -127,8 +137,14 @@ body{
     @apply ml-auto mr-2
     md:mr-8 md:h-auto md:w-auto;
 }
-.theme-toggle-div > img{
-    @apply md:h-9 md:w-9 ;
+.theme-toggle{
+    @apply md:h-9 md:w-9;
+}
+.img1{
+    @apply dark:hidden;
+}
+.img2{
+    @apply hidden dark:block
 }
 
 /* ------------------------------------------------------side bar---------------------------------------------------------------- */
@@ -137,7 +153,8 @@ body{
 
 }
 .side-bar{
-    @apply flex flex-col bg-yellow-50 h-full w-52 fixed top-0 left-0;
+    @apply flex flex-col bg-white h-full w-52 fixed top-0 left-0
+    dark:bg-[#041825];
     border: 2px solid black;
     border-radius: 10px;
     z-index: 1000;
@@ -148,7 +165,12 @@ body{
     transform: translateX(0);
 
 }
-
+.light-cross{
+    @apply block dark:hidden;
+}
+.dark-cross{
+    @apply hidden dark:block;
+}
 .logo-cont{
     @apply flex justify-between;
 }
@@ -159,7 +181,7 @@ body{
     @apply ml-2 mt-4 h-7 w-7 ;
 }
 .ai-tools-header{
-    @apply m-2 ml-2;
+    @apply m-2 ml-2 dark:text-[#e3f3fc];
 }
 .ai-tools-nav{
     @apply flex flex-col justify-start w-48 mt-5;
@@ -176,20 +198,26 @@ body{
     @apply h-80 w-full mt-8;
 }
 .chat-header{
-    @apply p-0 m-0 ml-2 leading-tight;
+    @apply p-0 m-0 ml-2 leading-tight dark:text-[#e3f3fc];
 }
 .chat-list-cont{
     @apply flex flex-col items-start p-0 mt-2 ml-2;
 }
 .chat-list{
-    @apply list-none;
+    @apply list-none dark:text-[#e3f3fc];
 }
 /* ---------------------------------------------------------------user-accounts section-------------------------------------------------------------------- */
 .user-footer{
-    @apply  ml-2 mt-auto p-2 my-4;
+    @apply  ml-2 mt-auto p-2 my-4 dark:text-[#e3f3fc];
 }
 .user-span{
     @apply flex gap-4 text-[20px];
+}
+.light-user-icon{
+    @apply block dark:hidden;
+}
+.dark-user-icon{
+    @apply hidden dark:block;
 }
 
 /* ------------------------------------------------------------------chat main container---------------------------------------------------------------------- */
@@ -201,7 +229,7 @@ body{
 }
 
 .chat-welcome-message{
-    @apply  mt-28 flex justify-center md:text-2xl;
+    @apply  mt-28 flex justify-center md:text-2xl dark:text-[#e3f3fc];
 }
 .user-prompt-container{
     @apply  w-[320px] mt-auto mb-6 mx-auto flex items-center gap-2
@@ -212,15 +240,28 @@ body{
 .user-voice-input{
     @apply h-6 w-6;
 }
+.light-voice-icon{
+    @apply block dark:hidden;
+}
+.dark-voice-icon{
+    @apply hidden dark:block;
+}
 .user-media-input{
     @apply h-6 w-6;
 }
+.light-attach-icon{
+    @apply block dark:hidden;
+}
+.dark-attach-icon{
+    @apply hidden dark:block;
+}
 .user-input{
-    @apply border-none ml-1 appearance-none focus:outline-none;
+    @apply border-none ml-1 appearance-none focus:outline-none
+    dark:bg-[#041825] dark:text-[#e3f3fc];
 }
 .ai-response{
-    @apply h-8 w-14 m-2 mx-4
-    md:mr-2 md:flex md:ml-auto md:w-auto;
+    @apply h-8 w-14 m-2 mx-4 bg-[#3674B5]
+    md:mr-2 md:flex md:ml-auto md:w-auto dark:bg-[#4C3BCF] ;
     border: 2px solid black;
     border-radius: 25px;
 }

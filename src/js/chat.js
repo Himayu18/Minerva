@@ -1,6 +1,5 @@
-console.log("sidebar JS loaded");
 
-const side_bar_button = document.getElementById("sideBar");
+
 const sideBar = document.querySelector(".side-bar");
 const modelSelector = document.getElementById("model-selector");
 function openSideBar(){
@@ -8,13 +7,15 @@ function openSideBar(){
     modelSelector.classList.add("adjust-model-selector")
 
 }
-side_bar_button.addEventListener("click",openSideBar)
+document.querySelectorAll(".sideBar").forEach(btn => btn.addEventListener("click",openSideBar))
 
-const close_side_bar = document.getElementById("close_sideBar")
 function closeSideBar(){
     sideBar.classList.toggle("open");
     modelSelector.classList.remove("adjust-model-selector")
     console.log("sidebar JS loaded");
-
+    
 }
-close_side_bar.addEventListener("click",closeSideBar)
+document.querySelectorAll(".close_sideBar").forEach(btn=> btn.addEventListener("click",closeSideBar))
+// Trigger light or dark mode
+const trigger_mode = document.getElementById("themeToggle")
+trigger_mode.addEventListener("click",()=>{document.documentElement.classList.toggle("dark")})
