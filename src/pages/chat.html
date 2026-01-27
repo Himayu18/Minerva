@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/dist/styles/output.css">
+    <link rel="stylesheet" href="../../dist/styles/output.css">
 </head>
 <body class="chat-page-body">
-    <header class="main-header">
+    <header class="main-header" >
         <button class="open-side-bar side-bar-dark sideBar"><img height="20px" width="20px" src="/assets/images/icons/side-bar.png" alt="side-bar"></button>
         <button class="open-side-bar side-bar-light sideBar"><img height="20px" width="20px" src="/assets/images/icons/light-menus.png" alt="side-bar"></button>
         <div class="ai-model-selector-div">
@@ -51,14 +51,15 @@
 
         <main class="chat-main-container">
             <section class="chat-welcome-message"><h1>Welcome to Minerva</h1></section>
-            <section class="chat-container"></section>
+            <section class="chat-container" id="chat_container">
+            </section>
             <div class="user-prompt-container">
                 <img class="user-voice-input light-voice-icon" height="20px" width="20px" src="/assets/images/icons/voice.png" alt="voice">
                 <img class="user-voice-input dark-voice-icon" height="20px" width="20px" src="/assets/images/icons/light-voice.png" alt="voice">
                 <img class="user-media-input light-attach-icon" height="20px" width="20px" src="/assets/images/icons/attach.png" alt="attach">
                 <img class="user-media-input dark-attach-icon" height="20px" width="20px" src="/assets/images/icons/light-attach.png" alt="attach">
-                <input class="user-input" id="user-input-prompt" type="text" placeholder="Ask anything..."> 
-                <button class="ai-response" ><img height="20px" width="20px" src="/assets/images/icons/up-arrow.png" alt="send"></button>
+                <input class="user-input" id="user-input-prompt" type="text" placeholder="Ask anything...">
+                <button class="ai-response" id="generate_response"><img height="20px" width="20px" src="/assets/images/icons/up-arrow.png" alt="send"></button>
             </div>
         </main>
     </div>

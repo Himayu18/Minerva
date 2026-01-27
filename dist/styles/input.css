@@ -1,4 +1,6 @@
 
+@tailwind utilities;
+
 /* *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**HOME PAGE STYLES **-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- */
 body{
     @apply m-0  ;
@@ -105,7 +107,7 @@ body{
 
 /* *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**CHAT PAGE STYLES **-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- */
 .chat-page-body{
-    @apply dark:bg-[#041825];
+    @apply dark:bg-[#041825] overflow-hidden;
 }
 .main-header{
     @apply h-12 w-full flex items-center gap-2
@@ -154,7 +156,7 @@ body{
 }
 .side-bar{
     @apply flex flex-col bg-white h-full w-52 fixed top-0 left-0
-    dark:bg-[#041825];
+    dark:bg-[#041825] dark:border-gray-800;
     border: 2px solid black;
     border-radius: 10px;
     z-index: 1000;
@@ -222,18 +224,21 @@ body{
 
 /* ------------------------------------------------------------------chat main container---------------------------------------------------------------------- */
 .chat-main-container{
-    @apply flex flex-col w-full mx-auto px-4 pb-6;
+    @apply flex flex-col w-full mx-auto px-4 pb-6 md:w-[900px] ;
 }
 .chat-container {
-    @apply flex-1 ml-7;
+    @apply flex-1 my-1 overflow-y-auto 
+     dark:text-[#e3f3fc];
+     scrollbar-width: thin;
+     
 }
 
 .chat-welcome-message{
     @apply  mt-28 flex justify-center md:text-2xl dark:text-[#e3f3fc];
 }
 .user-prompt-container{
-    @apply  w-[320px] mt-auto mb-6 mx-auto flex items-center gap-2
-    md:w-[700px];
+    @apply sticky  w-[320px]  mb-6 mx-auto flex items-center gap-2 
+    md:w-[700px] dark:border-gray-600 ;
     border: 2px solid black;
     border-radius: 20px;
 }
@@ -256,8 +261,8 @@ body{
     @apply hidden dark:block;
 }
 .user-input{
-    @apply border-none ml-1 appearance-none focus:outline-none
-    dark:bg-[#041825] dark:text-[#e3f3fc];
+    @apply border-none ml-1 w-full appearance-none focus:outline-none bg-transparent
+    dark:bg-[#041825] dark:text-[#e3f3fc] ;
 }
 .ai-response{
     @apply h-8 w-14 m-2 mx-4 bg-[#3674B5]
@@ -267,4 +272,22 @@ body{
 }
 .ai-response > img{
     @apply md:m-0 md:p-1 md:h-5 md:w-5;
+}
+
+.user-message-container{
+    @apply  flex flex-col mt-8 md:mt-14 mr-auto h-auto max-w-56 md:max-w-[800px] break-words ;
+}
+.user-input-message{
+    @apply h-auto  mr-auto text-[18px] bg-[#b1cee4] md:text-[24px] p-3 dark:bg-[#1a577f];
+    border-radius: 16px 4px 16px 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.ai-response-container{
+    @apply flex flex-col mt-3 h-auto w-full md:w-full break-words;
+}
+.ai-message{
+    @apply text-[17px] h-auto w-auto md:text-[24px];
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
