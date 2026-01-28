@@ -24,6 +24,7 @@ const submit_btn = document.getElementById("generate_response");
 const welcome_mssg = document.querySelector(".chat-welcome-message");
 const chat_container = document.getElementById("chat_container");
 
+let selectedModel = modelSelector.value;
 const buttonIcon = document.getElementById("button-icon")
 function setLoading(isLoading) {
   if (isLoading) {
@@ -91,7 +92,7 @@ submit_btn.addEventListener("click", async () => {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      model: "nvidia/nemotron-3-nano-30b-a3b:free",
+      model: selectedModel,
       messages: [{ role: "user", content: user_input }],
       temperature: 0.7,
       max_tokens: 512

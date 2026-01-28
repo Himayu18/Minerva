@@ -380,9 +380,6 @@ body
   margin: 0.5rem;
   height: 1.75rem;
   width: auto;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
   --tw-bg-opacity: 1;
   background-color: rgb(87 143 202 / var(--tw-bg-opacity, 1));
   padding-left: 0.5rem;
