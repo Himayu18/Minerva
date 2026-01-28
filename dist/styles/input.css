@@ -1,6 +1,5 @@
 
-@tailwind utilities;
-
+@tailwind components;
 /* *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**HOME PAGE STYLES **-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- */
 body{
     @apply m-0  ;
@@ -224,7 +223,7 @@ body{
 
 /* ------------------------------------------------------------------chat main container---------------------------------------------------------------------- */
 .chat-main-container{
-    @apply flex flex-col w-full mx-auto px-4 pb-6 md:w-[900px] ;
+    @apply flex flex-col w-full mx-auto px-4 pb-6 md:max-w-[65%] ;
 }
 .chat-container {
     @apply flex-1 my-1 overflow-y-auto 
@@ -237,7 +236,7 @@ body{
     @apply  mt-28 flex justify-center md:text-2xl dark:text-[#e3f3fc];
 }
 .user-prompt-container{
-    @apply sticky  w-[320px]  mb-6 mx-auto flex items-center gap-2 
+    @apply sticky  w-[320px] h-10 md:h-14  mb-6 mx-auto flex items-center gap-2 
     md:w-[700px] dark:border-gray-600 ;
     border: 2px solid black;
     border-radius: 20px;
@@ -262,16 +261,16 @@ body{
 }
 .user-input{
     @apply border-none ml-1 w-full appearance-none focus:outline-none bg-transparent
-    dark:bg-[#041825] dark:text-[#e3f3fc] ;
+    dark:bg-[#041825] dark:text-[#e3f3fc] text-[18px] md:text-[22px];
 }
 .ai-response{
-    @apply h-8 w-14 m-2 mx-4 bg-[#3674B5]
-    md:mr-2 md:flex md:ml-auto md:w-auto dark:bg-[#4C3BCF] ;
+    @apply h-8 w-14 md:h-10  m-2 mx-4 bg-[#3674B5]
+    md:mr-2 md:flex md:ml-auto md:w-14 dark:bg-[#4C3BCF] ;
     border: 2px solid black;
-    border-radius: 25px;
+    border-radius: 30px;
 }
 .ai-response > img{
-    @apply md:m-0 md:p-1 md:h-5 md:w-5;
+    @apply md:m-0 md:p-1 md:h-7 md:w-7;
 }
 
 .user-message-container{
@@ -288,6 +287,25 @@ body{
     @apply flex flex-col mt-3 h-auto w-full md:w-full break-words;
 }
 .ai-message{
-    @apply text-[17px] h-auto w-auto md:text-[24px];
+    @apply text-[15px] h-auto w-auto md:text-[22px];
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     white-space: pre-wrap;
 }
+
+.ai-message table{
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+.ai-message th, .ai-message td{
+  padding: 8px;
+  border: 1px solid #444;
+}
+
+/* spinner for response button */
+.spinner {
+  @apply h-6 w-6 md:h-8 md:w-8 rounded-full animate-spin;
+  border: 2px solid white;
+  border-top-color: transparent;
+}
+

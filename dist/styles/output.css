@@ -687,7 +687,7 @@ body
 {
   .chat-main-container
 {
-    width: 900px;
+    max-width: 65%;
   }
 }
 
@@ -738,6 +738,7 @@ body
   margin-right: auto;
   margin-bottom: 1.5rem;
   display: flex;
+  height: 2.5rem;
   width: 320px;
   align-items: center;
   gap: 0.5rem;
@@ -753,6 +754,7 @@ body
 {
   .user-prompt-container
 {
+    height: 3.5rem;
     width: 700px;
   }
 }
@@ -823,6 +825,7 @@ body
           appearance: none;
   border-style: none;
   background-color: transparent;
+  font-size: 18px;
 }
 
 .user-input:focus
@@ -837,6 +840,14 @@ body
   background-color: rgb(4 24 37 / var(--tw-bg-opacity, 1));
   --tw-text-opacity: 1;
   color: rgb(227 243 252 / var(--tw-text-opacity, 1));
+}
+
+@media (min-width: 768px)
+{
+  .user-input
+{
+    font-size: 22px;
+  }
 }
 
 .ai-response
@@ -863,13 +874,14 @@ body
     margin-right: 0.5rem;
     margin-left: auto;
     display: flex;
-    width: auto;
+    height: 2.5rem;
+    width: 3.5rem;
   }
 }
 
 .ai-response{
   border: 2px solid black;
-  border-radius: 25px;
+  border-radius: 30px;
 }
 
 @media (min-width: 768px)
@@ -877,8 +889,8 @@ body
   .ai-response > img
 {
     margin: 0px;
-    height: 1.25rem;
-    width: 1.25rem;
+    height: 1.75rem;
+    width: 1.75rem;
     padding: 0.25rem;
   }
 }
@@ -954,17 +966,66 @@ body
 {
   height: auto;
   width: auto;
-  font-size: 17px;
+  font-size: 15px;
 }
 
 @media (min-width: 768px)
 {
   .ai-message
 {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 
 .ai-message{
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  white-space: pre-wrap;
 }
+
+.ai-message table{
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+.ai-message th, .ai-message td{
+  padding: 8px;
+  border: 1px solid #444;
+}
+
+/* spinner for response button */
+
+.spinner
+{
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+@keyframes spin
+{
+  to
+{
+    transform: rotate(360deg);
+  }
+}
+
+.spinner
+{
+  animation: spin 1s linear infinite;
+  border-radius: 9999px;
+}
+
+@media (min-width: 768px)
+{
+  .spinner
+{
+    height: 2rem;
+    width: 2rem;
+  }
+}
+
+.spinner {
+  border: 2px solid white;
+  border-top-color: transparent;
+}
+
