@@ -673,11 +673,11 @@ body
   margin-left: auto;
   margin-right: auto;
   display: flex;
+  height: 100vh;
   width: 100%;
   flex-direction: column;
   padding-left: 1rem;
   padding-right: 1rem;
-  padding-bottom: 1.5rem;
 }
 
 @media (min-width: 768px)
@@ -688,12 +688,17 @@ body
   }
 }
 
+.chat-main-container{
+  padding-bottom: 0;
+}
+
 .chat-container
 {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   flex: 1 1 0%;
   overflow-y: auto;
+  padding-bottom: 7rem;
 }
 
 .chat-container:is(.dark *)
@@ -702,7 +707,7 @@ body
   color: rgb(227 243 252 / var(--tw-text-opacity, 1));
 }
 
-.chat-container {
+.chat-container{
   scrollbar-width: thin;
 }
 
@@ -730,29 +735,34 @@ body
 
 .user-prompt-container
 {
-  position: sticky;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.5rem;
+  position: fixed;
+  bottom: 3rem;
   display: flex;
   height: 2.5rem;
   width: 320px;
   align-items: center;
   gap: 0.5rem;
+  background-color: rgb(255 255 255 / 0.8);
+  --tw-backdrop-blur: blur(8px);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
 .user-prompt-container:is(.dark *)
 {
   --tw-border-opacity: 1;
   border-color: rgb(75 85 99 / var(--tw-border-opacity, 1));
+  background-color: rgb(4 24 37 / 0.9);
 }
 
 @media (min-width: 768px)
 {
   .user-prompt-container
 {
+    bottom: 1.5rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
     height: 3.5rem;
-    width: 700px;
+    width: 900px;
   }
 }
 
@@ -963,6 +973,8 @@ body
 {
   height: auto;
   width: auto;
+  overflow-wrap: break-word;
+  padding: 0.75rem;
   font-size: 15px;
 }
 
@@ -970,24 +982,65 @@ body
 {
   .ai-message
 {
-    font-size: 22px;
+    font-size: 18px;
   }
 }
 
 .ai-message{
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  white-space: pre-wrap;
+  white-space: normal;
+  line-height: 1.4;
+}
+
+.ai-message p,
+.ai-message ul,
+.ai-message ol,
+.ai-message blockquote,
+.ai-message pre {
+  margin: 2px 0;
+}
+
+.ai-message li {
+  margin: 2px 0;
+}
+
+.ai-message h1, .ai-message h2, .ai-message h3, .ai-message h4 {
+  margin: 8px 0 4px;
+  line-height: 1.25;
 }
 
 .ai-message table{
-  display: block;
-  overflow-x: auto;
+  width: 100%;
   border-collapse: collapse;
+  margin: 10px 0;
+  display: table;
+  /* reset */
 }
 
-.ai-message th, .ai-message td{
-  padding: 8px;
-  border: 1px solid #444;
+.ai-message .table-wrap{
+  overflow-x: auto;
+}
+
+.ai-message th,
+.ai-message td {
+  border: 1px solid rgba(255,255,255,.18);
+  padding: 8px 10px;
+  text-align: left;
+  /* ✅ header + cells align left */
+  vertical-align: top;
+  /* ✅ better for multi-line cells */
+  word-wrap: break-word;
+}
+
+.ai-message thead th {
+  font-weight: 600;
+}
+
+/* optional: horizontal scroll if table is wide */
+
+.ai-message table {
+  display: block;
+  overflow-x: auto;
 }
 
 /* spinner for response button */

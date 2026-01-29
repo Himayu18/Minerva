@@ -223,24 +223,26 @@ body{
 
 /* ------------------------------------------------------------------chat main container---------------------------------------------------------------------- */
 .chat-main-container{
-    @apply flex flex-col w-full mx-auto px-4 pb-6 md:max-w-[65%] ;
+  @apply flex flex-col w-full mx-auto px-4 md:max-w-[65%] h-screen;
+  padding-bottom: 0; 
 }
-.chat-container {
-    @apply flex-1 my-1 overflow-y-auto 
-     dark:text-[#e3f3fc];
-     scrollbar-width: thin;
-     
+
+.chat-container{
+  @apply flex-1 overflow-y-auto my-1 dark:text-[#e3f3fc] pb-28;
+  scrollbar-width: thin;
 }
+
 
 .chat-welcome-message{
     @apply  mt-28 flex justify-center md:text-2xl dark:text-[#e3f3fc];
 }
 .user-prompt-container{
-    @apply sticky  w-[320px] h-10 md:h-14  mb-6 mx-auto flex items-center gap-2 
-    md:w-[700px] dark:border-gray-600 ;
-    border: 2px solid black;
-    border-radius: 20px;
+  @apply fixed  bottom-12 md:mx-16 md:bottom-6 w-[320px] h-10 md:h-14
+  md:w-[900px] flex items-center gap-2 dark:border-gray-600 bg-white/80 dark:bg-[#041825]/90 backdrop-blur;
+  border: 2px solid black;
+  border-radius: 20px;
 }
+
 .user-voice-input{
     @apply h-6 w-6;
 }
@@ -287,19 +289,63 @@ body{
     @apply flex flex-col mt-3 h-auto w-full md:w-full break-words;
 }
 .ai-message{
-    @apply text-[15px] h-auto w-auto md:text-[22px];
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     white-space: pre-wrap;
+  @apply text-[15px] h-auto w-auto md:text-[18px] p-3 break-words;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  white-space: normal;
+  line-height: 1.4;
+}
+
+
+.ai-message p,
+.ai-message ul,
+.ai-message ol,
+.ai-message blockquote,
+.ai-message pre {
+  margin: 2px 0;      
+}
+
+.ai-message li {
+  margin: 2px 0;      
+}
+
+.ai-message h1, .ai-message h2, .ai-message h3, .ai-message h4 {
+  margin: 8px 0 4px;  
+  line-height: 1.25;
 }
 
 .ai-message table{
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+}
+
+
+.ai-message table{
+  display: table;   /* reset */
+}
+
+.ai-message .table-wrap{
+  overflow-x: auto;
+}
+
+
+.ai-message th,
+.ai-message td {
+  border: 1px solid rgba(255,255,255,.18);
+  padding: 8px 10px;
+  text-align: left;        /* ✅ header + cells align left */
+  vertical-align: top;     /* ✅ better for multi-line cells */
+  word-wrap: break-word;
+}
+
+.ai-message thead th {
+  font-weight: 600;
+}
+
+/* optional: horizontal scroll if table is wide */
+.ai-message table {
   display: block;
   overflow-x: auto;
-  border-collapse: collapse;
-}
-.ai-message th, .ai-message td{
-  padding: 8px;
-  border: 1px solid #444;
 }
 
 /* spinner for response button */

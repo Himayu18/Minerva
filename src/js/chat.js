@@ -125,23 +125,51 @@ submit_btn.addEventListener("click", async () => {
       for (const part of parts) {
         if (!part.startsWith("data:")) continue;
 
-        const chunk = part.startsWith("data: ") ? part.slice(6) : part.slice(5);
+        const dataStr = part.startsWith("data: ")
+          ? part.slice(6)
+          : part.slice(5);
 
-        if (chunk === "[DONE]") {
-          ai_message.innerHTML = marked.parse(fullText);
+       if (dataStr === "[DONE]") {
+  // Final markdown render
+  ai_message.innerHTML = marked.parse(fullText);
+
+  // Wrap tables so they scroll without breaking layout
+  ai_message.querySelectorAll("table").forEach(t => {
+    const wrap = document.createElement("div");
+    wrap.className = "table-wrap";
+    t.parentNode.insertBefore(wrap, t);
+    wrap.appendChild(t);
+  });
+
+  chat_container.scrollTop = chat_container.scrollHeight;
+  return;
+}
+
+
+        let payload;
+        try {
+          payload = JSON.parse(dataStr);
+        } catch {
+          // safety fallback (should almost never happen now)
+          fullText += dataStr;
+          ai_message.textContent = fullText;
+          continue;
+        }
+
+        if (payload.error) {
+          ai_message.textContent = `Error: ${payload.error}`;
+          return;
+        }
+
+        if (payload.delta) {
+          fullText += payload.delta;
+
+          // stream-friendly rendering
+          ai_message.textContent = fullText;
           chat_container.scrollTop = chat_container.scrollHeight;
-          return;
         }
-
-        if (chunk.startsWith("[ERROR]")) {
-          ai_message.textContent = chunk;
-          return;
-        }
-
-        fullText += chunk;
-        ai_message.textContent = fullText;
-        chat_container.scrollTop = chat_container.scrollHeight;
       }
+
     }
 
     ai_message.innerHTML = marked.parse(fullText);
